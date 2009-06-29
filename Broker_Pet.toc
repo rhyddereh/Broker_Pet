@@ -1,0 +1,19 @@
+## Title: Broker_Pet
+## Notes: LDB Plugin showing pet name (colored by happiness) as well as xp/xpmax
+## Author: Rodrick
+## X-eMail: d DOT mangus AT gmail DOT com
+
+## Interface: 30100
+## Version: @project-version@
+
+## DefaultState: enabled
+## LoadOnDemand: 0
+## X-Category: LibDataBroker
+## X-License: GPL v2 or later
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+embeds.xml
+
+Core.lua
