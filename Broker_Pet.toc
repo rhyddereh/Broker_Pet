@@ -8,6 +8,7 @@
 
 ## DefaultState: enabled
 ## LoadOnDemand: 0
+## SavedVariablesPerCharacter: Broker_PetDBPC
 ## X-Category: LibDataBroker
 ## X-License: GPL v2 or later
 
