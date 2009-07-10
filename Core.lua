@@ -17,10 +17,8 @@ local	colorXP = "6060ff"
 local colorRemaining = "cccccc"
 local Petname, Petlevel, currXP, nextXP, displaystring, numberoffilledbars, numberofemptybars
 
-if not Broker_PetDBPC and Broker_PetDBPC.displaybar then
-	Broker_PetDBPC = {}
-	Broker_PetDBPC.displaybar = false
-end
+if not Broker_PetDBPC then Broker_PetDBPC = {} end
+if not Broker_PetDBPC.displaybar then Broker_PetDBPC.displaybar = false end
 
 local function updatedisplay()
 	local PetHappiness = (GetPetHappiness())
