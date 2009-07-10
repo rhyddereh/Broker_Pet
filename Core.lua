@@ -32,7 +32,7 @@ local function updatedisplay()
 			if Broker_PetDBPC.displaybar then
 				numberoffilledbars = math.ceil(currXP/nextXP*length)
 				numberofemptybars = length - numberoffilledbars
-				displaystring = displaystring .. '|c' .. colorXP .. string.rep(char, numberoffilledbars) .. '|r|c' .. colorRemaining .. string.rep(char, numberofemptybars) .. '|r'
+				displaystring = displaystring .. ' |c' .. colorXP .. string.rep(char, numberoffilledbars) .. '|r|c' .. colorRemaining .. string.rep(char, numberofemptybars) .. '|r'
 			else
 				displaystring = displaystring .. ' ' .. currXP .. '/' .. nextXP
 			end
