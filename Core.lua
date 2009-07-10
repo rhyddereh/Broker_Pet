@@ -22,11 +22,6 @@ if not Broker_PetDBPC and Broker_PetDBPC.displaybar then
 	Broker_PetDBPC.displaybar = false
 end
 
-function dataobj.OnClick(self, button)
-	Broker_PetDBPC.displaybar = not Broker_PetDBPC.displaybar
-	updatedisplay()
-end
-
 local function updatedisplay()
 	local PetHappiness = (GetPetHappiness())
 	if (PetHappiness) then
@@ -34,19 +29,25 @@ local function updatedisplay()
 		Petlevel = UnitLevel("pet")
 		currXP, nextXP = GetPetExperience()
 		displaystring = '|c' .. happycolors[PetHappiness] .. Petname .. '|r'
-		if (Petlevel == UnitLevel("player")) then
+		if (Petlevel ~= UnitLevel("player")) then
+			displaystring = displaystring .. ' (' .. Petlevel .. ')'
 			if Broker_PetDBPC.displaybar then
 				numberoffilledbars = math.ceil(currXP/nextXP*length)
 				numberofemptybars = length - numberoffilledbars
 				displaystring = displaystring .. '|c' .. colorXP .. string.rep(char, numberoffilledbars) .. '|r|c' .. colorRemaining .. string.rep(char, numberofemptybars) .. '|r'
 			else
-				displaystring = displaystring .. ' (' .. Petlevel .. ') ' .. currXP .. '/' .. nextXP
+				displaystring = displaystring .. ' ' .. currXP .. '/' .. nextXP
 			end
 		end
 		dataobj.text = displaystring
 	else
 		dataobj.text = "No pet"
 	end
+end
+
+function dataobj.OnClick(self, button)
+	Broker_PetDBPC.displaybar = not Broker_PetDBPC.displaybar
+	updatedisplay()
 end
 
 f:SetScript("OnUpdate", function(self, elap)
