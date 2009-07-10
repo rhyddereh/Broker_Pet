@@ -10,11 +10,11 @@ local UPDATEPERIOD, elapsed = 0.5, 0
 local ldb = LibStub:GetLibrary("LibDataBroker-1.1")
 local dataobj = ldb:NewDataObject("Broker_Pet", {type = "data source", text = "No Pet"})
 local f = CreateFrame("frame")
-local happycolors = {"FF00FF00", "FFFFFF00", "FFFF0000"}
+local happycolors = {"FFFF0000", "FFFFFF00", "FF00FF00"}
 local length = 30
 local char = "||"
-local	colorXP = "6060ff"
-local colorRemaining = "cccccc"
+local	colorXP = "ff6060ff"
+local colorRemaining = "ffcccccc"
 local Petname, Petlevel, currXP, nextXP, displaystring, numberoffilledbars, numberofemptybars
 
 if not Broker_PetDBPC then Broker_PetDBPC = {} end
