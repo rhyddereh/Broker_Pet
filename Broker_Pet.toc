@@ -3,7 +3,7 @@
 ## Author: Rodrick
 ## X-eMail: d DOT mangus AT gmail DOT com
 
-## Interface: 30100
+## Interface: 30300
 ## Version: @project-version@
 
 ## DefaultState: enabled
