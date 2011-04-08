@@ -1,10 +1,6 @@
 --[[----------------------------------------------------------------------------------
-	Broker_Pet Core
-	
-	TODO:   impliment xp bar
-	
+	Broker_Pet Core	
 ------------------------------------------------------------------------------------]]
-
 
 local UPDATEPERIOD, elapsed = 0.5, 0
 local ldb = LibStub:GetLibrary("LibDataBroker-1.1")
