@@ -6,7 +6,6 @@ local UPDATEPERIOD, elapsed = 0.5, 0
 local ldb = LibStub:GetLibrary("LibDataBroker-1.1")
 local dataobj = ldb:NewDataObject("Broker_Pet", {type = "data source", text = "No Pet"})
 local f = CreateFrame("frame")
-local happycolors = {"FFFF0000", "FFFFFF00", "FF00FF00"}
 local length = 30
 local char = "||"
 local	colorXP = "ff6060ff"
@@ -17,12 +16,11 @@ if not Broker_PetDBPC then Broker_PetDBPC = {} end
 if not Broker_PetDBPC.displaybar then Broker_PetDBPC.displaybar = false end
 
 local function updatedisplay()
-	local PetHappiness = (GetPetHappiness())
-	if (PetHappiness) then
+	if (UnitExists("pet")) then
 		Petname = UnitName("pet")
 		Petlevel = UnitLevel("pet")
 		currXP, nextXP = GetPetExperience()
-		displaystring = '|c' .. happycolors[PetHappiness] .. Petname .. '|r'
+		displaystring = '|cFF00FF00' .. Petname .. '|r'
 		if (Petlevel ~= UnitLevel("player")) then
 			displaystring = displaystring .. ' (' .. Petlevel .. ')'
 			if Broker_PetDBPC.displaybar then
